@@ -9,6 +9,8 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @comments = @place.comments.all
+    @comment = @place.comments.build
     respond_with(@place)
   end
 
