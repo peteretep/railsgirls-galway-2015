@@ -41,3 +41,8 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'letsrate', :git => 'git://github.com/iammyr/letsrate.git'
+
+gem 'carrierwave'
+
+gem 'mini_magick', '3.5.0'

@@ -25,7 +25,7 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= @place.picture %>
+  <%= image_tag(@place.picture_url, width: 600) if @place.picture.present? %>
 </p>
 
 <p>
@@ -48,6 +48,21 @@
     <% end %>
   </div>
 <% end %>
+
+<p>
+<strong>Votes:</strong><br />
+Autism_friendly : <%= rating_for @place, "autism_friendly" %> <br />
+Overall : <%= rating_for @place, "overall" %>
+</p>
+<hr />
+<p>
+<strong>Your votes:</strong><br />
+Autism_friendly : <%= rating_for_user @place, current_user, "autism_friendly", :star => 7 %>
+Overall : <%= rating_for_user @place, current_user, "autism_friendly", :star => 7 %>
+</p>
+<hr />
+
+
 <%= render 'comments/form' %>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |

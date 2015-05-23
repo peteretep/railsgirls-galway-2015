@@ -22,7 +22,7 @@
       <td><%= place.lattitude %></td>
       <td><%= place.longitude %></td>
       <td><%= place.description %></td>
-      <td><%= place.picture %></td>
+      <td><%= image_tag place.picture_url(:thumb) if place.picture? %></td>
       <td><%= place.user_id %></td>
       <td><%= link_to 'Show', place %></td>
       <% if user_signed_in? %>
